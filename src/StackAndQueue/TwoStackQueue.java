@@ -45,4 +45,30 @@ public class TwoStackQueue {
     }
 
 
+    //Tested
+    public static void main(String[] args){
+        Stack<Integer> stack1=new Stack<>();
+        Stack<Integer> stack2=new Stack<>();
+
+        TwoStackQueue twoStackQueue=new TwoStackQueue(stack1,stack2);
+        twoStackQueue.add(1);
+        twoStackQueue.add(2);
+        twoStackQueue.add(3);
+        twoStackQueue.add(4);
+        twoStackQueue.add(5);
+
+        System.out.println(twoStackQueue.poll());
+        System.out.println(twoStackQueue.peek());
+        System.out.println(twoStackQueue.poll());
+        System.out.println(twoStackQueue.peek());
+        System.out.println(twoStackQueue.poll());
+        System.out.println(twoStackQueue.peek());
+        System.out.println(twoStackQueue.poll());
+        System.out.println(twoStackQueue.peek());
+        System.out.println(twoStackQueue.poll());
+        System.out.println(twoStackQueue.peek());
+
+    }
+
+
 }

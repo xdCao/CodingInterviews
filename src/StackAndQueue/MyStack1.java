@@ -49,5 +49,28 @@ public class MyStack1 {
         }
     }
 
+    //Tested
+    public static void main(String[] args){
+        Stack<Integer> stack1=new Stack<>();
+        Stack<Integer> stack2=new Stack<>();
+        MyStack1 myStack2=new MyStack1(stack1,stack2);
+
+        myStack2.push(2);
+        System.out.println(myStack2.getMin());
+        myStack2.push(4);
+        System.out.println(myStack2.getMin());
+        myStack2.push(1);
+        System.out.println(myStack2.getMin());
+        myStack2.pop();
+        System.out.println(myStack2.getMin());
+        myStack2.pop();
+        System.out.println(myStack2.getMin());
+        myStack2.pop();
+        System.out.println(myStack2.getMin());
+        myStack2.pop();
+        System.out.println(myStack2.getMin());
+
+    }
+
 
 }
