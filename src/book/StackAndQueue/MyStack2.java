@@ -1,59 +1,64 @@
-package StackAndQueue;
+package book.StackAndQueue;
 
 import java.util.Stack;
 
 /**
  * Created by xdcao on 2017/7/28.
  */
-public class MyStack1 {
+public class MyStack2 {
 
     private Stack<Integer> stackData;
     private Stack<Integer> stackMin;
 
-    public MyStack1(Stack<Integer> stackData, Stack<Integer> stackMin) {
+    public MyStack2(Stack<Integer> stackData, Stack<Integer> stackMin) {
         this.stackData = stackData;
         this.stackMin = stackMin;
     }
 
-    public void push(int newNum){
+    public void push(Integer num){
 
-        if (this.stackMin.isEmpty()){
-            stackMin.push(newNum);
+        stackData.push(num);
+
+        if (stackMin.isEmpty()){
+            stackMin.push(num);
         }else {
-            if (newNum<=stackMin.peek()){
-                this.stackMin.push(newNum);
+            if (num<=getMin()){
+                stackMin.push(num);
+            }else {
+                stackMin.push(getMin());
             }
         }
-
-        stackData.push(newNum);
 
     }
 
+
     public Integer pop(){
-        if (this.stackData.isEmpty()){
-            throw new RuntimeException("stack is empty");
+
+        if (stackData.isEmpty()){
+            throw new RuntimeException("stackData is empty");
         }else {
-            Integer pop = stackData.pop();
-            if (pop<=stackMin.peek()){
-                stackMin.pop();
-            }
-            return pop;
+            stackData.pop();
+            return stackMin.pop();
         }
+
+
     }
 
     public Integer getMin(){
-        if (this.stackMin.isEmpty()){
+
+        if(this.stackMin.isEmpty()){
             throw new RuntimeException("stackmin is empty");
         }else {
-            return this.stackMin.peek();
+            return stackMin.peek();
         }
+
     }
 
     //Tested
     public static void main(String[] args){
         Stack<Integer> stack1=new Stack<>();
         Stack<Integer> stack2=new Stack<>();
-        MyStack1 myStack2=new MyStack1(stack1,stack2);
+        MyStack2 myStack2=new MyStack2(stack1,stack2);
 
         myStack2.push(2);
         System.out.println(myStack2.getMin());

@@ -1,4 +1,4 @@
-package StackAndQueue;
+package book.StackAndQueue;
 
 /**
  * Created by xdcao on 2017/7/28.
